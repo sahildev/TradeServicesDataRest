@@ -1,10 +1,12 @@
 package com.example.ts.TradeServicesDataRest.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-public class Order {
+@Entity
+public class Orders {
 	
 	@Id
 	private int orderId;
@@ -27,7 +29,7 @@ public class Order {
     @ManyToOne
     private Trade trade;
 
-	public Order(int orderId, String securityName, Integer price, String description, Side side, Region region,
+	public Orders(int orderId, String securityName, Integer price, String description, Side side, Region region,
 			Trade trade) {
 		super();
 		this.orderId = orderId;
