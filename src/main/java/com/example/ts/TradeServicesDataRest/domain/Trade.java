@@ -5,16 +5,23 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Trade {
+public class Trade{
 	
 	@Id
 	private String tradeId;
 
 	@Column
-	private String tradename;
+	private String tradeName;
+	
+	public Trade(){
+		super();
+	}
 	
 	public Trade(String tradeId, String tradeName) {
-		// TODO Auto-generated constructor stub
+		super();
+		this.tradeId=tradeId;
+		this.tradeName=tradeName;
+		
 	}
 
 	public String getTradeId() {
@@ -25,12 +32,12 @@ public class Trade {
 		this.tradeId = tradeId;
 	}
 
-	public String getTradename() {
-		return tradename;
+	public String getTradeName() {
+		return tradeName;
 	}
 
-	public void setTradename(String tradename) {
-		this.tradename = tradename;
+	public void setTradeName(String tradename) {
+		this.tradeName = tradename;
 	}
 	
 	@Override
@@ -38,7 +45,7 @@ public class Trade {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((tradeId == null) ? 0 : tradeId.hashCode());
-		result = prime * result + ((tradename == null) ? 0 : tradename.hashCode());
+		result = prime * result + ((tradeName == null) ? 0 : tradeName.hashCode());
 		return result;
 	}
 
@@ -56,17 +63,17 @@ public class Trade {
 				return false;
 		} else if (!tradeId.equals(other.tradeId))
 			return false;
-		if (tradename == null) {
-			if (other.tradename != null)
+		if (tradeName == null) {
+			if (other.tradeName != null)
 				return false;
-		} else if (!tradename.equals(other.tradename))
+		} else if (!tradeName.equals(other.tradeName))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Trade [tradeId=" + tradeId + ", tradename=" + tradename + "]";
+		return "Trade [tradeId=" + tradeId + ", tradeName=" + tradeName + "]";
 	}
 
 }

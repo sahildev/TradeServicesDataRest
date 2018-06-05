@@ -7,7 +7,6 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Orders {
-	
 	@Id
 	private int orderId;
 	
